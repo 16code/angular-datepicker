@@ -191,7 +191,7 @@
 
               if (attr.dateFormat) {
                 // check element is input
-                if (thisInput[0].tagName && thisInput[0].tagName.toLowerCase() == 'input') {
+                if (thisInput[0].tagName && thisInput[0].tagName.toLowerCase() === 'input') {
                   thisInput.val($filter('date')(modelDate, dateFormat));
                 } else {
                   thisInput.find('input').val($filter('date')(modelDate, dateFormat));
