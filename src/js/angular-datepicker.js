@@ -190,8 +190,12 @@
               var modelDate = new Date($scope.year + '/' + $scope.monthNumber + '/' + $scope.day);
 
               if (attr.dateFormat) {
-
-                thisInput.val($filter('date')(modelDate, dateFormat));
+                // check element is input
+                if (thisInput[0].tagName && thisInput[0].tagName.toLowerCase() == 'input') {
+                  thisInput.val($filter('date')(modelDate, dateFormat));
+                } else {
+                  thisInput.find('input').val($filter('date')(modelDate, dateFormat));
+                }
               } else {
 
                 thisInput.val(modelDate);
